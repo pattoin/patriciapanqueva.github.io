@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexa Email — Patricia Panqueva</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{--blk:#0d0d0d;--wht:#fff;--gry:#757575;--sur:#f5f5f5;--acc:#F0B400;--acc-l:#FEF8E1;--acc-d:#B58A00;--bdr:1px solid #e8e8e8;--max:860px;}
+body{background:var(--wht);color:var(--blk);font-family:'Roboto',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;background:var(--wht);border-bottom:var(--bdr);display:flex;align-items:center;justify-content:space-between;padding:0 32px;}
+.nav-back{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--gry);font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;}
+.nav-back:hover{color:var(--blk)}.nav-back svg{width:16px;height:16px;}
+.nav-name{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;}
+.nav-cta{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gry);text-decoration:none;padding:8px 16px;border-radius:20px;transition:all .15s;}
+.nav-cta:hover{background:var(--blk);color:var(--wht);}
+.hero{margin-top:56px;height:80vh;min-height:500px;position:relative;overflow:hidden;background:#1a1200;}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:right center;opacity:.5;}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,26,53,.1) 0%,rgba(13,26,53,.96) 72%);display:flex;flex-direction:column;justify-content:flex-end;padding:64px;}
+.hero-tag{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.hero-tag::before{content:'';display:block;width:24px;height:2px;background:var(--acc);}
+h1.hero-title{font-family:'Roboto Condensed',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;text-transform:uppercase;color:var(--wht);margin-bottom:28px;}
+.hero-meta{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;}
+.hmi{display:flex;flex-direction:column;gap:3px;}
+.hml{font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);}
+.hmv{font-size:.84rem;font-weight:400;color:rgba(255,255,255,.82);}
+.role-strip{background:var(--acc);padding:0 64px;display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;}
+.role-strip::-webkit-scrollbar{display:none}
+.rc{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.75);padding:13px 20px 13px 0;white-space:nowrap;}
+.rc::after{content:'·';color:rgba(0,0,0,.25);margin-left:20px;}
+.rc:last-child::after{display:none}
+.content{max-width:var(--max);margin:0 auto;padding:80px 32px;}
+.cs{margin-bottom:72px;}
+.slabel{font-size:.62rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.slabel::before{content:'';display:block;width:20px;height:2px;background:var(--acc);}
+.stitle{font-family:'Roboto Condensed',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.05;text-transform:uppercase;margin-bottom:20px;}
+.body{font-size:1rem;font-weight:300;line-height:1.82;color:#2a2a2a;margin-bottom:16px;}
+.body strong{font-weight:500;color:var(--blk)}.body em{color:var(--acc-d);font-style:italic;}
+.div{width:48px;height:3px;background:var(--acc);margin:64px 0;border-radius:2px;}
+.pq{border-left:4px solid var(--acc);padding:8px 0 8px 28px;margin:36px 0;}
+.pq p{font-size:1.15rem;font-style:italic;font-weight:300;line-height:1.65;color:#1a1a1a;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:8px;overflow:hidden;margin:36px 0;}
+.stat{background:var(--sur);padding:28px 20px;text-align:center;}
+.stat-n{font-family:'Roboto Condensed',sans-serif;font-size:2.6rem;font-weight:900;letter-spacing:-.03em;color:var(--acc);line-height:1;margin-bottom:6px;}
+.stat-l{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gry);}
+.artifact{margin:32px 0;border:var(--bdr);border-radius:10px;overflow:hidden;}
+.artifact-header{background:var(--blk);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
+.artifact-title{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.artifact-tag{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--acc);color:#1a1200;padding:3px 8px;border-radius:3px;white-space:nowrap;}
+.artifact img{width:100%;display:block;cursor:zoom-in;transition:opacity .2s;}
+.artifact img:hover{opacity:.92;}
+.artifact-cap{padding:12px 20px;font-size:.76rem;color:var(--gry);font-style:italic;border-top:var(--bdr);}
+.tension-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0;}
+.tc{background:var(--sur);border-radius:8px;padding:22px;border-left:4px solid var(--acc);}
+.tc-label{font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:6px;}
+.tc-title{font-size:.9rem;font-weight:500;color:var(--blk);margin-bottom:5px;}
+.tc-body{font-size:.82rem;font-weight:300;line-height:1.6;color:#555;}
+.process{border:var(--bdr);border-radius:8px;overflow:hidden;margin:24px 0;}
+.ps{display:grid;grid-template-columns:48px 1fr;border-bottom:var(--bdr);transition:background .15s;}
+.ps:last-child{border-bottom:none}.ps:hover{background:var(--acc-l);}
+.ps-n{background:var(--acc);display:flex;align-items:center;justify-content:center;font-family:'Roboto Condensed',sans-serif;font-size:.95rem;font-weight:900;color:#1a1200;}
+.ps-body{padding:16px 20px;}
+.ps-title{font-size:.88rem;font-weight:500;margin-bottom:3px;color:var(--blk);}
+.ps-desc{font-size:.8rem;font-weight:300;color:#555;line-height:1.6;}
+.pp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:24px 0;}
+.pp{background:var(--acc-l);border-radius:8px;padding:22px;border-top:3px solid var(--acc);}
+.pp-icon{width:36px;height:36px;border-radius:6px;background:var(--acc);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.pp-icon svg{width:18px;height:18px;stroke:#1a1200;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.pp-title{font-family:'Roboto Condensed',sans-serif;font-size:.85rem;font-weight:900;text-transform:uppercase;margin-bottom:6px;color:var(--acc-d);}
+.pp-body{font-size:.8rem;font-weight:400;line-height:1.6;color:#333;}
+.ub{background:var(--acc-l);border-radius:8px;padding:28px;margin:24px 0;}
+.ul{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:14px;}
+.utterances{display:flex;flex-wrap:wrap;gap:8px;}
+.utt{background:var(--wht);border:1.5px solid rgba(26,115,232,.25);border-radius:100px;padding:7px 16px;font-size:.84rem;color:var(--acc-d);font-style:italic;}
+.ob{background:var(--acc);border-radius:10px;padding:40px;margin:24px 0;color:#1a1200;}
+.ob .slabel{color:rgba(0,0,0,.45)}.ob .slabel::before{background:rgba(0,0,0,.3);}
+.ob p{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(0,0,0,.72);margin-bottom:14px;}
+.ob p:last-child{margin-bottom:0}.ob strong{color:#1a1200;font-weight:500;}
+.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:24px;}
+.lightbox.open{display:flex;}
+.lb-inner{position:relative;max-width:95vw;max-height:92vh;}
+.lb-inner img{max-width:100%;max-height:92vh;object-fit:contain;border-radius:6px;display:block;}
+.lb-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;background:var(--wht);border:2px solid var(--blk);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;font-weight:700;color:var(--blk);transition:background .15s;}
+.lb-close:hover{background:var(--blk);color:var(--wht);}
+.lb-hint{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);white-space:nowrap;}
+.next{background:var(--blk);padding:64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.nl{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px;}
+.nt{font-family:'Roboto Condensed',sans-serif;font-size:2.2rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:var(--wht);line-height:1.0;}
+.nb{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--acc);color:#1a1200;border-radius:4px;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.nb:hover{background:var(--acc-d)}.nb svg{width:16px;height:16px;}
+footer{background:var(--blk);border-top:1px solid #222;color:rgba(255,255,255,.3);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;font-size:.72rem;letter-spacing:.06em;}
+.fn{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:.82rem;color:var(--wht);text-transform:uppercase;}
+.fl{display:flex;gap:20px;}.fl a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s;}.fl a:hover{color:var(--wht);}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.vis{opacity:1;transform:none;}
+@media(max-width:700px){
+  .hero-ov{padding:32px 24px;}.role-strip{padding:0 24px;}.content{padding:48px 20px;}
+  .stats{grid-template-columns:1fr 1fr;}.tension-grid,.pp-grid{grid-template-columns:1fr;}
+  .next{padding:40px 24px;}nav{padding:0 16px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    All Work
+  </a>
+  <span class="nav-name">Patricia Panqueva</span>
+  <a href="mailto:patricia.panqueva@gmail.com" class="nav-cta">Say Hello</a>
+</nav>
+
+<section class="hero">
+  <img src="em-hero.jpg" alt="Person on sofa asking Alexa to check email">
+  <div class="hero-ov">
+    <div class="hero-tag">Amazon Alexa · Voice UI · Identity Design · 2018</div>
+    <h1 class="hero-title">Alexa<br>Email</h1>
+    <div class="hero-meta">
+      <div class="hmi"><span class="hml">My Role</span><span class="hmv">Lead UX — Voice &amp; Multimodal</span></div>
+      <div class="hmi"><span class="hml">Team</span><span class="hmv">Alexa Household Organization</span></div>
+      <div class="hmi"><span class="hml">Surfaces</span><span class="hmv">Echo Show · Echo Spot · Voice-only · Mobile</span></div>
+      <div class="hmi"><span class="hml">Launched</span><span class="hmv">2018 · Santa Clara, CA</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="role-strip">
+  <div class="rc">Voice Interaction Model</div>
+  <div class="rc">Privacy &amp; Identity Design</div>
+  <div class="rc">Voice Enrollment UX</div>
+  <div class="rc">Cross-Surface UI</div>
+  <div class="rc">Prototyping &amp; Redlines</div>
+  <div class="rc">Product Direction</div>
+</div>
+
+<div class="content">
+
+  <section class="cs reveal">
+    <div class="slabel">Overview</div>
+    <h2 class="stitle">Email Is Personal. Alexa Lives in the Living Room.</h2>
+    <p class="body">Email is one of the most intimate digital spaces we have — financial information, personal relationships, health records, private conversations. Alexa is a <strong>shared household device</strong> sitting in the most public room of the home.</p>
+    <p class="body">Designing Alexa Email meant solving a fundamental tension: how do you bring a deeply personal experience into a shared ambient device — <strong>without compromising privacy, trust, or the simplicity</strong> that makes voice compelling? There was no playbook. We built one.</p>
+  </section>
+
+  <div class="stats reveal">
+    <div class="stat"><div class="stat-n">2.5B</div><div class="stat-l">Global email users (2018)</div></div>
+    <div class="stat"><div class="stat-n">2M+</div><div class="stat-l">Projected linked accounts</div></div>
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">Core design tenets</div></div>
+  </div>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Project Context</div>
+    <h2 class="stitle">Working Backwards From the Customer</h2>
+    <p class="body">Alexa Email was part of a larger initiative called <strong>Alexa Connect</strong> — Amazon's strategy to make Alexa a proactive personal assistant by connecting her to real sources of personal data: email, calendar, SMS, and beyond. We started with email because it was the richest and most universally adopted data source, with <strong>2.5 billion users worldwide</strong>.</p>
+    <p class="body">The project used Amazon's <strong>Working Backwards methodology</strong> — we wrote the press release and FAQ before building anything. This forced clarity on what we were actually solving for customers before a single line of code was written.</p>
+
+    <div class="pq"><p>"Alexa Connect saves customers time and energy, freeing them from tedious interactions with their personal information. Over time, Connect lets Alexa take care of the grunt-work associated with personal information management."<br><span style="font-size:.8rem;font-style:normal;color:#888;margin-top:6px;display:block;">— Alexa Connect PR/FAQ, May 2018</span></p></div>
+
+    <div class="tension-grid">
+      <div class="tc">
+        <div class="tc-label">Tenet 01</div>
+        <div class="tc-title">Privacy</div>
+        <div class="tc-body">Protecting customer data is paramount. Access to personal information is a big ask — we must handle credentials with care and never surprise users with what Alexa knows.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-label">Tenet 02</div>
+        <div class="tc-title">Compelling Value</div>
+        <div class="tc-body">Access to personal information is a big ask. We must provide compelling, tangible value in return for that trust — or we don't deserve it.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-label">Tenet 03</div>
+        <div class="tc-title">No Surprises</div>
+        <div class="tc-body">We carefully present what we learn in context so customers are never surprised or made uncomfortable by what Alexa knows. When in doubt, ask permission.</div>
+      </div>
+      <div class="tc">
+        <div class="tc-label">North Star</div>
+        <div class="tc-title">Alexa Sets You Free</div>
+        <div class="tc-body">Alexa becomes a proactive intermediary — not just helping customers navigate information by voice, but understanding it. She tells you when your flight is delayed, drafts replies in your voice, and always stays discreet.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">The Problem</div>
+    <h2 class="stitle">Four Tensions With No Easy Answers</h2>
+    <div class="tension-grid">
+      <div class="tc"><div class="tc-label">Tension 01</div><div class="tc-title">Personal vs. Shared</div><div class="tc-body">Email is deeply private. Alexa is a household device used by multiple people. Every decision had to navigate this conflict without making the experience feel paranoid or cumbersome.</div></div>
+      <div class="tc"><div class="tc-label">Tension 02</div><div class="tc-title">Convenience vs. Security</div><div class="tc-body">Voice's core value is frictionless access. Email security requires friction by design. We had to find the minimum viable friction — enough to protect, not enough to frustrate.</div></div>
+      <div class="tc"><div class="tc-label">Tension 03</div><div class="tc-title">Voice-only vs. Multimodal</div><div class="tc-body">The design had to work on Echo Dot (no screen) just as well as Echo Show. What gets read aloud vs. displayed visually was a core design decision with real privacy consequences.</div></div>
+      <div class="tc"><div class="tc-label">Tension 04</div><div class="tc-title">Multi-user Household</div><div class="tc-body">Voice profiles help identify speakers — but what about guests, children, or ambiguous cases? Each edge case required a graceful, human-centered fallback pattern.</div></div>
+    </div>
+    <div class="pq"><p>"A good butler announces that you have a message. They don't read it aloud in front of the whole household."</p></div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Design Process</div>
+    <h2 class="stitle">Building the Voice Identity Layer</h2>
+    <p class="body">My approach was to treat privacy as a <strong>first principle that shaped every interaction decision</strong> from the ground up — not a feature added at the end. The core of the system was the voice enrollment and identity model.</p>
+    <div class="process">
+      <div class="ps"><div class="ps-n">1</div><div class="ps-body"><div class="ps-title">Map every privacy scenario</div><div class="ps-desc">Created a comprehensive matrix of who could be in the room, what they could hear, and what the consequences of each privacy failure would be. This became the design constraint framework.</div></div></div>
+      <div class="ps"><div class="ps-n">2</div><div class="ps-body"><div class="ps-title">Design two voice enrollment options</div><div class="ps-desc">Built guided phrase-reading enrollment (Option 1, high accuracy) and voice-command passive enrollment (Option 2, lower friction) to serve different user contexts and comfort levels.</div></div></div>
+      <div class="ps"><div class="ps-n">3</div><div class="ps-body"><div class="ps-title">Design the voice code security layer</div><div class="ps-desc">Designed an optional 4-digit voice code as a second authentication factor — providing security for users who needed it, without forcing friction on those who didn't.</div></div></div>
+      <div class="ps"><div class="ps-n">4</div><div class="ps-body"><div class="ps-title">Establish what gets spoken vs. displayed</div><div class="ps-desc">For Echo Show: sender and subject on screen, body on demand. For voice-only: metadata first, content explicitly requested. The screen does privacy work that voice alone cannot.</div></div></div>
+      <div class="ps"><div class="ps-n">5</div><div class="ps-body"><div class="ps-title">Redline the full system</div><div class="ps-desc">Produced detailed redlines for every screen state — identity confirmation, account linking (Google, Microsoft, Apple), email and calendar settings, voice restrictions, and voice code configuration — built to the Alexa Elements design system.</div></div></div>
+      <div class="ps"><div class="ps-n">6</div><div class="ps-body"><div class="ps-title">Align stakeholders through storytelling</div><div class="ps-desc">Used scenario-based narratives to align senior stakeholders on the privacy model — showing specific household situations rather than abstract policy arguments.</div></div></div>
+    </div>
+  </section>
+
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Scenario & Storyboard</div>
+    <h2 class="stitle">Mary Hears a Notification</h2>
+    <p class="body">To ground the design, we built a core scenario: <strong>Mary</strong> hears an email notification on her phone while making breakfast. Instead of interrupting her flow, she asks Alexa — and stays in motion.</p>
+    <div class="pq"><p>"Alexa, check my email." — Alexa responds: "You have two unread emails and one important email from Susan about the upcoming meeting." Mary asks Alexa to read it. Alexa reads while Mary continues cooking. If the email is long, Alexa pauses and asks if she should continue.</p></div>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Storyboard — Scene 1: Mary, single, 32, in a rush to get to the office</span>
+        <span class="artifact-tag">HHO CX Design</span>
+      </div>
+      <img src="em-storyboard.jpg" alt="Alexa Email storyboard — Mary waking up to Alexa reading an important email" onclick="openLightbox(this)">
+      <div class="artifact-cap">Alarm goes off, Mary stops it. Alexa proactively surfaces an important email from Tom. Mary asks Alexa to continue reading as she walks to the bathroom — the device follows her across surfaces.</div>
+    </div>
+
+    <p class="body">This scenario defined the core design principle: <strong>Alexa should reduce cognitive load, not add to it.</strong> Every interaction decision — when to speak, when to wait, when to ask — was tested against this scenario.</p>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Research & Testing</div>
+    <h2 class="stitle">Online Interviews & Multimodal Prototypes</h2>
+    <p class="body">I developed <strong>Lo-Fi prototypes</strong> for initial dialogue creation, refining interactions through role-play sessions using Keynote conversation prototypes. I conducted tests with online users on <strong>UserTesting.com</strong>, iterating on dialogue variants to find the right balance of information density and naturalness.</p>
+    <p class="body">Collaborating with linguistics experts, I tested three response pattern variants and asked users to choose which felt most natural. <strong>Option 1 won clearly (6/8 users)</strong> — establishing the response pattern that shipped.</p>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">UserTesting.com — Keynote conversation prototype testing</span>
+        <span class="artifact-tag">Online Research · 8 Participants</span>
+      </div>
+      <img src="em-usertesting.jpg" alt="UserTesting.com prototype results showing Option 1 preferred 6 out of 8" onclick="openLightbox(this)">
+      <div class="artifact-cap">Participants listened to 3 audio response options for "What's my email?" and voted. Option 1 (6/8) won — the more detailed, context-rich response. This directly validated the metadata-first approach.</div>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Response Pattern — Winning dialogue template</span>
+        <span class="artifact-tag">Voice Design</span>
+      </div>
+      <img src="em-response.jpg" alt="Response pattern template showing inbox owner, unread count, and important emails" onclick="openLightbox(this)">
+      <div class="artifact-cap">"For [inbox owner], from the last 24 hours you have X unread emails, X marked important. The first [important] email is from [sender], [subject]. Do you want to [read, reply, forward, delete, archive or next]?"</div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Design Artifacts — Voice Enrollment</div>
+    <h2 class="stitle">Two Paths to Voice Identity</h2>
+    <p class="body">We designed two enrollment options. <strong>Option 1</strong> guides users through reading 10 phrases aloud — high accuracy, explicit training. <strong>Option 2</strong> starts enrollment with a single voice command — lower friction, lower barrier to entry.</p>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Voice Enrollment Option 1 — Guided phrase reading</span>
+        <span class="artifact-tag">HHO CX Design · Amazon Confidential</span>
+      </div>
+      <img src="em-enroll1.jpg" alt="Voice Enrollment Option 1" onclick="openLightbox(this)">
+      <div class="artifact-cap">Select a device → choose from household devices → tap Next to start → read 10 phrases aloud. High-accuracy enrollment for primary users. Last screen shows the "Listening..." state with a progress indicator and the phrase to read.</div>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Voice Enrollment Option 2 — VUI-triggered enrollment</span>
+        <span class="artifact-tag">HHO CX Design · Amazon Confidential</span>
+      </div>
+      <img src="em-enroll2.jpg" alt="Voice Enrollment Option 2" onclick="openLightbox(this)">
+      <div class="artifact-cap">Say "Alexa, learn my voice" to start enrollment passively. Lower friction for secondary household users. The open design question — "HOW DO WE KNOW IT'S DONE?" — shows the honest challenges we were actively working through.</div>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Voice Code — Optional 4-digit security layer</span>
+        <span class="artifact-tag">HHO CX Design · Amazon Confidential</span>
+      </div>
+      <img src="em-voicecode.jpg" alt="Voice code setup flow" onclick="openLightbox(this)">
+      <div class="artifact-cap">After enrollment, users can optionally set a 4-digit voice code as a second authentication factor for email access. Confirms "Alexa can now check and play your emails without asking who you are" — privacy protection without mandatory friction.</div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Design Artifacts — Redlines</div>
+    <h2 class="stitle">The Full Identity &amp; Settings System</h2>
+    <p class="body">These redlines cover the complete system — from the household identity check through account linking, all email and calendar settings states, voice restrictions, and voice code configuration. Built to the Alexa Elements design system in React Native via Bridge.</p>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Redlines — Identity confirmation &amp; account linking</span>
+        <span class="artifact-tag">Elements · React Native · Bridge</span>
+      </div>
+      <img src="em-redline1.jpg" alt="Redlines — identity confirmation and account linking" onclick="openLightbox(this)">
+      <div class="artifact-cap">Identity confirmation ("Are you Juanita Trex?"), account service selection (Google, Microsoft, Apple, Exchange), OAuth consent with data permissions, and account-added confirmation. Top row shows annotated redlines, bottom row shows clean final UI.</div>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Redlines — Email &amp; Calendar settings states</span>
+        <span class="artifact-tag">Elements · React Native · Bridge</span>
+      </div>
+      <img src="em-redline2.jpg" alt="Redlines — email and calendar settings" onclick="openLightbox(this)">
+      <div class="artifact-cap">Five settings states: no account linked, both email and calendar linked, calendar only, email only, and new calendar events view. Each state shows account-specific settings including Alexa notifications, voice restrictions toggle, voice code, and linked calendar management.</div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Design Artifacts — Mobile App Screens</div>
+    <h2 class="stitle">Account Settings & Email Access Controls</h2>
+    <p class="body">These are the actual production screens from the Alexa mobile app — showing the granular email access controls, account-specific settings, and the full post-linking settings state. This is the UI layer where users manage what Alexa can see and do with their email.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:28px 0;">
+      <div class="artifact" style="margin:0;">
+        <div class="artifact-header">
+          <span class="artifact-title">Email access — account linking</span>
+        </div>
+        <img src="em-settings1.jpg" alt="Google account linking with email access toggles" onclick="openLightbox(this)">
+        <div class="artifact-cap">OAuth consent screen with granular email access toggles — retailers, airlines. Users control exactly what Alexa can see.</div>
+      </div>
+      <div class="artifact" style="margin:0;">
+        <div class="artifact-header">
+          <span class="artifact-title">Full settings — linked account</span>
+        </div>
+        <img src="em-settings2.jpg" alt="Account-specific settings with all toggles" onclick="openLightbox(this)">
+        <div class="artifact-cap">Post-linking settings: email signature, email access, Alexa notifications, voice restrictions, and linked calendars — all per-account.</div>
+      </div>
+      <div class="artifact" style="margin:0;">
+        <div class="artifact-header">
+          <span class="artifact-title">Email access — service selection</span>
+        </div>
+        <img src="em-settings3.jpg" alt="Email and calendar service toggles" onclick="openLightbox(this)">
+        <div class="artifact-cap">Service-level toggles for email and calendar access — users choose which Google services Alexa can access before connecting.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Design Artifacts — Multimodal Echo Show</div>
+    <h2 class="stitle">Voice + Screen: The Email Reading Experience</h2>
+    <p class="body">On Echo Show, email content is displayed visually while Alexa reads — reducing what gets spoken aloud in the room. The screen shows <strong>Mary's Email · 2 of 3</strong> with the full email body, while a hint at the bottom teaches the voice navigation pattern: <em>"Try: Alexa, reply or next email."</em></p>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Multi-Modal Echo Show — Final UI design</span>
+        <span class="artifact-tag">Echo Show · Multimodal</span>
+      </div>
+      <img src="em-echoshow.jpg" alt="Echo Show displaying Mary's email from Expedia" onclick="openLightbox(this)">
+      <div class="artifact-cap">The screen shows the full email content while Alexa reads. Account identity ("Mary's Email · mary@gmail.com") is persistent — always showing whose inbox is active. Voice hint at the bottom teaches navigation without interrupting the reading flow.</div>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-header">
+        <span class="artifact-title">Multi-Modal Echo Show — Redlines sample</span>
+        <span class="artifact-tag">Multimodal Knight HHO · Alexa Design System</span>
+      </div>
+      <img src="em-redlines2.jpg" alt="Echo Show redlines showing list control with speech hint" onclick="openLightbox(this)">
+      <div class="artifact-cap">Production redlines for the Multimodal Knight HHO Email List Control — header component (C1), list item primary double inverted (C2), speech hint bottom left (C3), and blended background layer (C4). Sender, timestamp, and subject headline displayed in the priority view. Navigation hint: "Try: Alexa, read, reply, delete, archive email, or next."</div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Key Design Decisions</div>
+    <h2 class="stitle">Privacy as an Interaction Principle</h2>
+    <div class="pp-grid">
+      <div class="pp">
+        <div class="pp-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="pp-title">Metadata first, content on demand</div>
+        <div class="pp-body">Alexa announces sender and subject — never the body — until explicitly asked. Awareness without exposure.</div>
+      </div>
+      <div class="pp">
+        <div class="pp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="pp-title">Voice profiles as identity layer</div>
+        <div class="pp-body">Recognized voices get full access. Unrecognized voices get a graceful redirect — an invitation, not a failure.</div>
+      </div>
+      <div class="pp">
+        <div class="pp-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <div class="pp-title">Screen as privacy layer</div>
+        <div class="pp-body">On Echo Show, visual display replaces spoken content wherever possible — the screen does privacy work voice alone cannot.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cs reveal">
+    <div class="slabel">Voice Design</div>
+    <h2 class="stitle">The Golden Utterances</h2>
+    <p class="body">The VUI was designed around a <strong>list navigation paradigm</strong> — Alexa creates prioritized lists (important, new, waiting) from the inbox, and customers navigate with simple one-word commands. For long emails, Alexa reads the first 80 words then pauses — conversational, not overwhelming.</p>
+
+    <div class="artifact" style="border-color:#F0B400;">
+      <div class="artifact-header">
+        <span class="artifact-title">VUI Dialog Spec — Core email navigation flow</span>
+        <span class="artifact-tag">Alexa Connect PR/FAQ · Amazon Confidential</span>
+      </div>
+      <div style="padding:24px 28px;background:#1a1200;font-family:'Courier New',monospace;font-size:.82rem;line-height:1.9;color:rgba(255,255,255,.75);">
+        <div><span style="color:#F0B400;font-weight:700;">C:</span> "Alexa, do I have any email?"</div>
+        <div><span style="color:rgba(255,255,255,.45);font-weight:700;">A:</span> "You have 2 new emails, and 1 important email from Susan about Family Reunion."</div>
+        <div style="margin-top:6px"><span style="color:#F0B400;font-weight:700;">C:</span> "Read it."</div>
+        <div><span style="color:rgba(255,255,255,.45);font-weight:700;">A:</span> "Susan says 'Did you have a chance to check out the summer camp info I sent?' Would you like to hear more?"</div>
+        <div style="margin-top:6px"><span style="color:#F0B400;font-weight:700;">C:</span> "No, delete it."</div>
+        <div><span style="color:rgba(255,255,255,.45);font-weight:700;">A:</span> "OK, I archived it. Your first new email is from Gary about Bowling Shirts."</div>
+        <div style="margin-top:6px"><span style="color:#F0B400;font-weight:700;">C:</span> "Reply, 'Sounds great, looking forward to it!'"</div>
+        <div><span style="color:rgba(255,255,255,.45);font-weight:700;">A:</span> "OK, I've sent 'Sounds great, looking forward to it.' You have no more new email."</div>
+      </div>
+      <div class="artifact-cap">Navigation commands: read · reply · delete · archive · next · previous · skip. Messages read in a 80-word preview — Alexa pauses and asks before continuing long emails.</div>
+    </div>
+
+    <div class="ub">
+      <div class="ul">Golden Utterances — what users actually say</div>
+      <div class="utterances">
+        <span class="utt">"Alexa, check my email"</span>
+        <span class="utt">"Alexa, read my emails"</span>
+        <span class="utt">"Alexa, who emailed me?"</span>
+        <span class="utt">"Alexa, next email"</span>
+        <span class="utt">"Alexa, read that"</span>
+        <span class="utt">"Alexa, learn my voice"</span>
+        <span class="utt">"Alexa, who am I?"</span>
+        <span class="utt">"Alexa, reply"</span>
+        <span class="utt">"Alexa, delete"</span>
+        <span class="utt">"Alexa, mark as read"</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Outcome &amp; Impact</div>
+    <h2 class="stitle">What Shipped — and What It Established</h2>
+    <div class="ob">
+      <div class="slabel">Impact</div>
+      <p>Alexa Email shipped as part of the Alexa Household Organization suite — bringing <strong>voice-accessible personal email to 20M+ Alexa households</strong> with the first voice identity system at this scale.</p>
+      <p>The privacy framework — <strong>metadata-first, voice-profile gating, screen-as-privacy-layer, optional voice code</strong> — became a reusable pattern for other sensitive data features across the Alexa ecosystem.</p>
+      <p>The project proved that <strong>voice and privacy are not opposites</strong>. With the right interaction grammar, sensitive personal data can be made accessible by voice without compromising the trust users expect.</p>
+    </div>
+  </section>
+
+  <section class="cs reveal">
+    <div class="slabel">Reflection</div>
+    <h2 class="stitle">What I'd Do Differently</h2>
+    <p class="body">I would invest more in <strong>longitudinal trust research</strong> — understanding how users' comfort with voice email evolved over weeks, not just at initial setup. Trust is built gradually, and our research was mostly point-in-time.</p>
+    <p class="body">I'd also push harder for <strong>user-controlled privacy modes</strong> — letting users configure their own thresholds for what gets spoken vs. displayed. The system we shipped was a strong starting point; personalization is the right long-term answer.</p>
+  </section>
+
+</div>
+
+<div class="next">
+  <div><div class="nl">Next Project</div><div class="nt">Alexa<br>Search</div></div>
+  <a href="#" class="nb">View Case Study
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<footer>
+  <span class="fn">Patricia Panqueva</span>
+  <div class="fl">
+    <a href="https://linkedin.com/in/patriciapanqueva" target="_blank">LinkedIn</a>
+    <a href="mailto:patricia.panqueva@gmail.com">Email</a>
+    <a href="index.html">All Work</a>
+  </div>
+  <span>© 2026</span>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-inner">
+    <img id="lb-img" src="" alt="Full view">
+    <div class="lb-close" onclick="closeLightbox(event)">&#x2715;</div>
+    <div class="lb-hint">Click outside or press ESC to close</div>
+  </div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')});},{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function openLightbox(img){document.getElementById('lb-img').src=img.src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLightbox(e){if(!e||!e.target.closest('.lb-inner')||e.target.classList.contains('lb-close')){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox();});
+</script>
+</body>
+</html>
