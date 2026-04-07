@@ -8,27 +8,27 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--blk:#0d0d0d;--wht:#fff;--gry:#757575;--sur:#f5f5f5;--bdr:1px solid #e8e8e8}
-body{font-family:'Roboto',sans-serif;background:var(--wht);color:var(--blk);line-height:1.7;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',sans-serif;background:var(--wht);color:var(--blk);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{text-decoration:none}
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;background:#fff;border-bottom:2px solid #111;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
-.nname{font-family:'Roboto Condensed',sans-serif;font-size:1rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#111}
+.nname{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:1rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#111}
 .nlinks{display:flex;gap:4px;list-style:none}
-.nlink{padding:7px 14px;border-radius:20px;font-size:.74rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#757575;transition:background .15s}
+.nlink{padding:7px 14px;font-size:.74rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#757575;transition:background .15s}
 .nlink:hover{background:rgba(0,0,0,.06);color:#111}
 .nlink.cta{background:#111;color:#fff}
 .nlink.cta:hover{background:#333}
 @media(max-width:560px){.nlink.hm{display:none}}
 
 .hero{margin-top:56px;min-height:85vh;display:flex;background:url("about-hero.jpg") center 20%/cover no-repeat;background-color:#0a1818;}
-.hero-panel{width:440px;min-height:85vh;background:#fff;padding:64px 48px;display:flex;flex-direction:column;justify-content:center;box-shadow:6px 0 40px rgba(0,0,0,.2);flex-shrink:0}
+.hero-panel{width:440px;min-height:85vh;background:#f4f2ee;padding:64px 48px;display:flex;flex-direction:column;justify-content:center;box-shadow:6px 0 40px rgba(0,0,0,.2);flex-shrink:0}
 .eyebrow{font-size:.64rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#757575;margin-bottom:14px;display:flex;align-items:center;gap:10px}
 .eyebrow::before{content:'';width:20px;height:2px;background:#111;display:block}
-.hero-h1{font-family:'Roboto Condensed',sans-serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:900;line-height:.96;letter-spacing:-.03em;text-transform:uppercase;color:#111;margin-bottom:18px}
-.hero-h1 span{background:#111;color:#fff;padding:2px 10px;border-radius:3px;display:inline-block;margin-top:6px}
+.hero-h1{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:900;line-height:.96;letter-spacing:-.03em;text-transform:uppercase;color:#111;margin-bottom:18px}
+.hero-h1 span{background:#111;color:#fff;padding:2px 10px;display:inline-block;margin-top:6px}
 .hero-quote{font-size:.95rem;font-style:italic;font-weight:300;line-height:1.7;color:#555;margin-bottom:28px;border-left:3px solid #111;padding-left:14px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:6px;overflow:hidden;border:var(--bdr)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;overflow:hidden;border:var(--bdr)}
 .stat{background:#f5f5f5;padding:16px 12px;text-align:center}
-.stat-n{font-family:'Roboto Condensed',sans-serif;font-size:1.7rem;font-weight:900;color:#111;line-height:1;margin-bottom:3px}
+.stat-n{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:1.7rem;font-weight:900;color:#111;line-height:1;margin-bottom:3px}
 .stat-l{font-size:.58rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#757575}
 @media(max-width:700px){.hero{min-height:auto}.hero-panel{width:100%;min-height:auto;padding:48px 24px}}
 
@@ -36,72 +36,70 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;background:#fff;
 .sec{margin-bottom:60px}
 .slabel{font-size:.6rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#111;margin-bottom:10px;display:flex;align-items:center;gap:8px}
 .slabel::before{content:'';width:16px;height:2px;background:#111;display:block}
-.stitle{font-family:'Roboto Condensed',sans-serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:14px}
+.stitle{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:14px}
 .body{font-size:.95rem;font-weight:300;line-height:1.8;color:#333;margin-bottom:12px}
 .body strong{font-weight:500;color:#111}
-.div{width:36px;height:3px;background:#111;margin:52px 0;border-radius:2px}
-
-.how-list{margin-top:20px;border-top:var(--bdr)}
+.div{width:36px;height:3px;background:#111;margin:52px 0;border-top:var(--bdr)}
 .how-row{display:grid;grid-template-columns:52px 1fr;border-bottom:var(--bdr);padding:20px 0;align-items:start}
 .how-num{font-size:.72rem;font-weight:700;color:#bbb;padding-top:4px;letter-spacing:.06em}
 .how-inner{display:grid;grid-template-columns:180px 1fr;gap:20px;align-items:start}
 .how-title-wrap{display:flex;align-items:center;gap:10px}
-.how-icon{width:32px;height:32px;border-radius:6px;background:#111;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.how-icon{width:32px;height:32px;background:#111;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .how-icon svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .how-title{font-size:.88rem;font-weight:500;color:#111}
 .how-body{font-size:.85rem;font-weight:300;line-height:1.65;color:#555}
 @media(max-width:600px){.how-inner{grid-template-columns:1fr;gap:8px}}
 
 .soft-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
-.soft-card{border:var(--bdr);border-radius:8px;padding:20px;transition:border-color .2s,box-shadow .2s}
+.soft-card{border:var(--bdr);padding:20px;transition:border-color .2s,box-shadow .2s}
 .soft-card:hover{border-color:#111;box-shadow:0 4px 14px rgba(0,0,0,.07)}
 .soft-icon{width:32px;height:32px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
 .soft-icon svg{width:18px;height:18px;stroke:#111;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.soft-label{font-family:'Roboto Condensed',sans-serif;font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#111;margin-bottom:4px}
+.soft-label{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:.82rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#111;margin-bottom:4px}
 .soft-desc{font-size:.76rem;font-weight:300;line-height:1.6;color:#666}
 
-.tl{border:var(--bdr);border-radius:8px;overflow:hidden;margin-top:20px}
+.tl{border:var(--bdr);overflow:hidden;margin-top:20px}
 .tl-row{display:grid;grid-template-columns:100px 1fr;border-bottom:var(--bdr);transition:background .15s}
 .tl-row:last-child{border-bottom:none}
 .tl-row:hover{background:#fafafa}
-.tl-yr{padding:16px 14px 16px 18px;font-family:'Roboto Condensed',sans-serif;font-size:.74rem;font-weight:900;color:#757575;border-right:var(--bdr);display:flex;align-items:center}
+.tl-yr{padding:16px 14px 16px 18px;font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:.74rem;font-weight:900;color:#757575;border-right:var(--bdr);display:flex;align-items:center}
 .tl-body{padding:16px 18px}
 .tl-role{font-size:.86rem;font-weight:500;color:#111;margin-bottom:2px}
 .tl-co{font-size:.74rem;color:#757575}
 
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
-.sg{background:#f5f5f5;border-radius:8px;padding:20px}
+.sg{background:#f5f5f5;padding:20px}
 .sg-title{font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#757575;margin-bottom:10px}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
-.tag{padding:4px 10px;border:1.5px solid #ddd;border-radius:100px;font-size:.68rem;font-weight:500;color:#555;transition:all .15s;cursor:default}
+.tag{padding:4px 10px;border:1.5px solid rgba(10,10,10,.15);font-size:.68rem;font-weight:500;color:#555;transition:all .15s;cursor:default}
 .tag:hover{border-color:#111;color:#111}
 
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
-.edu-card{border:var(--bdr);border-radius:8px;padding:22px;transition:box-shadow .2s,transform .2s}
+.edu-card{border:var(--bdr);padding:22px;transition:box-shadow .2s,transform .2s}
 .edu-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
 .edu-yr{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#757575;margin-bottom:7px}
-.edu-deg{font-family:'Roboto Condensed',sans-serif;font-size:.95rem;font-weight:900;text-transform:uppercase;color:#111;margin-bottom:3px}
+.edu-deg{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:.95rem;font-weight:900;text-transform:uppercase;color:#111;margin-bottom:3px}
 .edu-sch{font-size:.8rem;color:#555;margin-bottom:8px}
 .edu-note{font-size:.74rem;font-weight:300;line-height:1.6;color:#888}
-.award{display:inline-flex;align-items:center;gap:5px;background:#111;color:#fff;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-top:8px}
+.award{display:inline-flex;align-items:center;gap:5px;background:#111;color:#fff;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-top:8px}
 
 .countries{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-.country{padding:8px 14px;border:2px solid #111;border-radius:4px;font-family:'Roboto Condensed',sans-serif;font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#111;transition:all .15s;cursor:default}
+.country{padding:8px 14px;border:2px solid #111;font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#111;transition:all .15s;cursor:default}
 .country:hover{background:#111;color:#fff}
 
 .cta-band{background:#111;padding:56px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-.cta-title{font-family:'Roboto Condensed',sans-serif;font-size:1.8rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;line-height:1.05}
+.cta-title{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:1.8rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:#fff;line-height:1.05}
 .cta-sub{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:5px}
 .cta-btns{display:flex;gap:10px;flex-wrap:wrap}
-.cbtn{display:inline-flex;align-items:center;padding:11px 22px;border-radius:4px;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .15s}
+.cbtn{display:inline-flex;align-items:center;padding:11px 22px;font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .15s}
 .cbtn-w{background:#fff;color:#111}.cbtn-w:hover{background:#eee}
 .cbtn-o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}.cbtn-o:hover{border-color:#fff}
 @media(max-width:700px){.cta-band{padding:40px 24px}}
 
 footer{background:#111;color:rgba(255,255,255,.4);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.7rem}
-.fn{font-family:'Roboto Condensed',sans-serif;font-size:.8rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.04em}
+.fn{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:.8rem;font-weight:900;color:#fff;text-transform:uppercase;letter-spacing:.04em}
 .fl{display:flex;align-items:center;gap:2px}
-.fl a{display:flex;align-items:center;gap:5px;padding:6px 12px;border-radius:20px;font-size:.7rem;font-weight:500;color:rgba(255,255,255,.5);transition:background .15s,color .15s}
+.fl a{display:flex;align-items:center;gap:5px;padding:6px 12px;font-size:.7rem;font-weight:500;color:rgba(255,255,255,.5);transition:background .15s,color .15s}
 .fl a:hover{background:rgba(255,255,255,.1);color:#fff}
 .fl svg{width:13px;height:13px;flex-shrink:0}
 
@@ -116,14 +114,14 @@ footer{background:#111;color:rgba(255,255,255,.4);padding:0 24px;height:56px;dis
 }
 </style>
 </head>
-<body>
+<body style="background:#f4f2ee">
 
 <nav>
   <a href="index.html" class="nname">Patricia Panqueva</a>
   <ul class="nlinks">
     <li><a href="index.html" class="nlink hm">Work</a></li>
     <li><a href="about.html" class="nlink hm" style="color:#111;font-weight:700">About</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#6f1f0e1b1d060c060e411f0e011e1a0a190e2f08020e0603410c0002" class="nlink cta">Say Hello</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#e5958491978c868c84cb95848b9490809384a58288848c89cb868a88" class="nlink cta">Say Hello</a></li>
   </ul>
 </nav>
 
@@ -278,12 +276,12 @@ footer{background:#111;color:rgba(255,255,255,.4);padding:0 24px;height:56px;dis
     <div class="slabel">Skills & Tools</div>
     <h2 class="stitle">What I bring</h2>
     <div class="skills-grid">
-      <div class="sg" style="border-top:3px solid #111"><div class="sg-title">UX Leadership</div><div class="tags"><span class="tag">Experience Vision</span><span class="tag">Design Strategy</span><span class="tag">Roadmap Influence</span><span class="tag">Team Mentorship</span><span class="tag">Stakeholder Storytelling</span><span class="tag">Go-to-Market</span></div></div>
-      <div class="sg" style="border-top:3px solid #111"><div class="sg-title">Specialization</div><div class="tags"><span class="tag">Voice UX</span><span class="tag">Multimodal Design</span><span class="tag">AI Product Design</span><span class="tag">Hardware UX</span><span class="tag">Systems Thinking</span><span class="tag">Journey Mapping</span></div></div>
-      <div class="sg" style="border-top:3px solid #111"><div class="sg-title">Prototyping</div><div class="tags"><span class="tag">Lo-fi to Hi-fi</span><span class="tag">Voice Prototyping</span><span class="tag">Multimodal Prototyping</span><span class="tag">Rapid Iteration</span><span class="tag">Figma</span><span class="tag">Voiceflow</span></div></div>
-      <div class="sg" style="border-top:3px solid #111"><div class="sg-title">UX Methods</div><div class="tags"><span class="tag">Ethnographic Research</span><span class="tag">Participatory Design</span><span class="tag">Wizard of Oz</span><span class="tag">Concept Storytelling</span><span class="tag">Design Systems</span></div></div>
-      <div class="sg" style="border-top:3px solid #111"><div class="sg-title">AI & Vibe Coding</div><div class="tags"><span class="tag">Claude Code</span><span class="tag">Figma Make</span><span class="tag">Lovable</span><span class="tag">Cursor</span><span class="tag">LLM Prompt Design</span><span class="tag">ChatGPT</span><span class="tag">Google Stitch</span><span class="tag">Flow</span><span class="tag">Whisk</span></div></div>
-      <div class="sg" style="border-top:3px solid #111"><div class="sg-title">Voice Design</div><div class="tags"><span class="tag">Multi-turn Dialog</span><span class="tag">Assistant Personas</span><span class="tag">Agentic Workflows</span><span class="tag">Utterance Design</span><span class="tag">Cross-surface UX</span></div></div>
+      <div class="sg" style="border-top:3px solid #0a0a0a"><div class="sg-title">UX Leadership</div><div class="tags"><span class="tag">Experience Vision</span><span class="tag">Design Strategy</span><span class="tag">Roadmap Influence</span><span class="tag">Team Mentorship</span><span class="tag">Stakeholder Storytelling</span><span class="tag">Go-to-Market</span></div></div>
+      <div class="sg" style="border-top:3px solid #0a0a0a"><div class="sg-title">Specialization</div><div class="tags"><span class="tag">Voice UX</span><span class="tag">Multimodal Design</span><span class="tag">AI Product Design</span><span class="tag">Hardware UX</span><span class="tag">Systems Thinking</span><span class="tag">Journey Mapping</span></div></div>
+      <div class="sg" style="border-top:3px solid #0a0a0a"><div class="sg-title">Prototyping</div><div class="tags"><span class="tag">Lo-fi to Hi-fi</span><span class="tag">Voice Prototyping</span><span class="tag">Multimodal Prototyping</span><span class="tag">Rapid Iteration</span><span class="tag">Figma</span><span class="tag">Voiceflow</span></div></div>
+      <div class="sg" style="border-top:3px solid #0a0a0a"><div class="sg-title">UX Methods</div><div class="tags"><span class="tag">Ethnographic Research</span><span class="tag">Participatory Design</span><span class="tag">Wizard of Oz</span><span class="tag">Concept Storytelling</span><span class="tag">Design Systems</span></div></div>
+      <div class="sg" style="border-top:3px solid #0a0a0a"><div class="sg-title">AI & Vibe Coding</div><div class="tags"><span class="tag">Claude Code</span><span class="tag">Figma Make</span><span class="tag">Lovable</span><span class="tag">Cursor</span><span class="tag">LLM Prompt Design</span><span class="tag">ChatGPT</span><span class="tag">Google Stitch</span><span class="tag">Flow</span><span class="tag">Whisk</span></div></div>
+      <div class="sg" style="border-top:3px solid #0a0a0a"><div class="sg-title">Voice Design</div><div class="tags"><span class="tag">Multi-turn Dialog</span><span class="tag">Assistant Personas</span><span class="tag">Agentic Workflows</span><span class="tag">Utterance Design</span><span class="tag">Cross-surface UX</span></div></div>
     </div>
   </section>
 
@@ -329,7 +327,7 @@ footer{background:#111;color:rgba(255,255,255,.4);padding:0 24px;height:56px;dis
   </div>
   <div class="cta-btns">
     <a href="index.html" class="cbtn cbtn-w">View My Work</a>
-    <a href="/cdn-cgi/l/email-protection#c1b1a0b5b3a8a2a8a0efb1a0afb0b4a4b7a081a6aca0a8adefa2aeac" class="cbtn cbtn-o">Say Hello</a>
+    <a href="/cdn-cgi/l/email-protection#2c5c4d585e454f454d025c4d425d59495a4d6c4b414d4540024f4341" class="cbtn cbtn-o">Say Hello</a>
   </div>
 </div>
 
@@ -337,5 +335,5 @@ footer{background:#111;color:rgba(255,255,255,.4);padding:0 24px;height:56px;dis
   <div class="fn">Patricia Panqueva</div>
   <div class="fl">
     <a href="https://www.linkedin.com/in/patriciapanqueva" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
-    <a href="/cdn-cgi/l/email-protection#26564752544f454f4708564748575343504766414b474f4a0845494b"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
+    <a href="/cdn-cgi/l/email-protection#2c5c4d585e454f454d025c4d425d59495a4d6c4b414d4540024f4341"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>Email</a>
     <a href="https://patriciapanqueva.com" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro

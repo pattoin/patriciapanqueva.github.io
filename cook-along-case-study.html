@@ -5,24 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alexa Cook Along — Patricia Panqueva</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-:root{--blk:#0d0d0d;--wht:#fff;--gry:#757575;--sur:#f5f5f5;--acc:#00A8E0;--acc-l:#E3F6FD;--acc-d:#006E94;--bdr:1px solid #e8e8e8;--max:820px;}
-body{background:var(--wht);color:var(--blk);font-family:'Roboto',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+:root{--blk:#0a0a0a;--wht:#fff;--gry:#9a9690;--sur:#eeece8;--acc:#00A8E0;--acc-l:#E3F6FD;--acc-d:#006E94;--bdr:1px solid #e8e8e8;--max:820px;}
+body{background:#f4f2ee;color:#0a0a0a;font-family:'DM Sans',sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;background:var(--wht);border-bottom:var(--bdr);display:flex;align-items:center;justify-content:space-between;padding:0 32px;}
 .nav-back{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--gry);font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .15s;}
 .nav-back:hover{color:var(--blk);}.nav-back svg{width:16px;height:16px;}
-.nav-name{font-family:'Roboto Condensed',sans-serif;font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;}
-.nav-cta{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gry);text-decoration:none;padding:8px 16px;border-radius:20px;transition:all .15s;}
+.nav-name{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;}
+.nav-cta{font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gry);text-decoration:none;padding:8px 16px;transition:all .15s;}
 .nav-cta:hover{background:var(--blk);color:var(--wht);}
 .hero{margin-top:56px;height:80vh;min-height:500px;position:relative;overflow:hidden;background:#001824;}
 .hero img{width:100%;height:100%;object-fit:cover;object-position:center 35%;opacity:.65;}
 .hero-ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,24,36,.2) 0%,rgba(0,24,36,.95) 75%);display:flex;flex-direction:column;justify-content:flex-end;padding:64px;}
 .hero-tag{font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
 .hero-tag::before{content:'';display:block;width:24px;height:2px;background:var(--acc);}
-h1.hero-title{font-family:'Roboto Condensed',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;text-transform:uppercase;color:var(--wht);margin-bottom:28px;}
+h1.hero-title{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:clamp(3rem,7vw,5.5rem);font-weight:900;line-height:.95;letter-spacing:-.03em;text-transform:uppercase;color:var(--wht);margin-bottom:28px;}
 .hero-meta{display:flex;gap:32px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:24px;}
 .hmi{display:flex;flex-direction:column;gap:3px;}
 .hml{font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);}
@@ -36,61 +36,61 @@ h1.hero-title{font-family:'Roboto Condensed',sans-serif;font-size:clamp(3rem,7vw
 .cs{margin-bottom:80px;}
 .slabel{font-size:.62rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--acc);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
 .slabel::before{content:'';display:block;width:20px;height:2px;background:var(--acc);}
-.stitle{font-family:'Roboto Condensed',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.05;text-transform:uppercase;margin-bottom:20px;}
+.stitle{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.05;text-transform:uppercase;margin-bottom:20px;}
 .body{font-size:1rem;font-weight:300;line-height:1.82;color:#2a2a2a;margin-bottom:16px;}
 .body strong{font-weight:500;color:var(--blk)}.body em{color:var(--acc);font-style:italic;}
 .pq{border-left:4px solid var(--acc);padding:8px 0 8px 28px;margin:40px 0;}
 .pq p{font-size:1.2rem;font-style:italic;font-weight:300;line-height:1.65;color:#1a1a1a;}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:8px;overflow:hidden;margin:36px 0;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;overflow:hidden;margin:36px 0;}
 .stat{background:var(--sur);padding:28px 20px;text-align:center;}
-.stat-n{font-family:'Roboto Condensed',sans-serif;font-size:2.6rem;font-weight:900;letter-spacing:-.03em;color:var(--acc);line-height:1;margin-bottom:6px;}
+.stat-n{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:2.6rem;font-weight:900;letter-spacing:-.03em;color:var(--acc);line-height:1;margin-bottom:6px;}
 .stat-l{font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--gry);}
 .img-full{margin:48px 0;}
-.img-full img{width:100%;display:block;border-radius:8px;border:var(--bdr);}
+.img-full img{width:100%;display:block;border:var(--bdr);}
 .img-cap{font-size:.76rem;font-weight:400;color:var(--gry);font-style:italic;margin-top:10px;text-align:center;}
 .test-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:28px 0;}
-.timg{position:relative;overflow:hidden;border-radius:8px;border:var(--bdr);background:#111;}
+.timg{position:relative;overflow:hidden;border:var(--bdr);background:#111;}
 .timg img{width:100%;display:block;object-fit:cover;height:240px;transition:transform .4s;}
 .timg.tw{grid-column:span 2;}.timg.tw img{height:300px;object-position:center 30%;}
 .timg:hover img{transform:scale(1.03);}
 .tlabel{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.78),transparent);padding:28px 14px 12px;font-size:.71rem;color:rgba(255,255,255,.8);font-style:italic;}
-.ttag{position:absolute;top:10px;left:10px;background:var(--acc);color:var(--wht);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:3px;}
+.ttag{position:absolute;top:10px;left:10px;background:var(--acc);color:var(--wht);font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;}
 .ig{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:28px 0;}
-.ic{background:var(--sur);border-radius:8px;padding:24px;border-top:3px solid var(--acc);}
-.in{font-family:'Roboto Condensed',sans-serif;font-size:1.8rem;font-weight:900;color:var(--acc);line-height:1;opacity:.25;margin-bottom:10px;}
+.ic{background:var(--sur);padding:24px;border-top:3px solid var(--acc);}
+.in{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:1.8rem;font-weight:900;color:var(--acc);line-height:1;opacity:.25;margin-bottom:10px;}
 .it{font-size:.88rem;font-weight:400;line-height:1.65;color:#333;}
 .it strong{font-weight:600;color:var(--blk);}
-.wf{background:#f9f9f9;border:var(--bdr);border-radius:10px;overflow:hidden;margin:32px 0;}
+.wf{background:#f9f9f9;border:var(--bdr);overflow:hidden;margin:32px 0;}
 .wfh{background:var(--blk);padding:14px 20px;display:flex;align-items:center;gap:8px;}
-.wfd{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2);}
+.wfd{width:10px;height:10px;background:rgba(255,255,255,.2);}
 .wft{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-left:6px;}
 .wfs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e0e0e0;}
 .ws{background:var(--wht);position:relative;}
 .ws img{width:100%;display:block;}
-.wl{position:absolute;top:8px;left:10px;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);background:var(--acc-l);padding:3px 7px;border-radius:3px;}
+.wl{position:absolute;top:8px;left:10px;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc);background:var(--acc-l);padding:3px 7px;}
 .wfc{padding:14px 20px;font-size:.74rem;color:var(--gry);font-style:italic;text-align:center;border-top:var(--bdr);}
-.ub{background:var(--acc-l);border-radius:8px;padding:28px;margin:32px 0;}
+.ub{background:var(--acc-l);padding:28px;margin:32px 0;}
 .ul{font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-bottom:14px;}
 .utterances{display:flex;flex-wrap:wrap;gap:8px;}
-.utt{background:var(--wht);border:1.5px solid rgba(0,168,224,.25);border-radius:100px;padding:7px 16px;font-size:.84rem;color:var(--acc-d);font-style:italic;}
-.vw{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;border:var(--bdr);margin:28px 0 10px;background:#000;}
-.vw iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:10px;}
-.ob{background:var(--acc);border-radius:10px;padding:40px;margin:32px 0;color:var(--wht);}
+.utt{background:var(--wht);border:1.5px solid rgba(0,168,224,.25);padding:7px 16px;font-size:.84rem;color:var(--acc-d);font-style:italic;}
+.vw{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:var(--bdr);margin:28px 0 10px;background:#000;}
+.vw iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.ob{background:var(--acc);padding:40px;margin:32px 0;color:var(--wht);}
 .ob .slabel{color:rgba(255,255,255,.6)}.ob .slabel::before{background:rgba(255,255,255,.4);}
 .ob p{font-size:1rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.88);margin-bottom:14px;}
 .ob p:last-child{margin-bottom:0}.ob strong{color:var(--wht);font-weight:500;}
-.div{width:48px;height:3px;background:var(--acc);margin:72px 0;border-radius:2px;}
+.div{width:48px;height:3px;background:var(--acc);margin:72px 0;}
 .next{background:var(--blk);padding:64px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
 .nl{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:8px;}
-.nt{font-family:'Roboto Condensed',sans-serif;font-size:2.2rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:var(--wht);line-height:1.0;}
-.nb{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--acc);color:var(--wht);border-radius:4px;text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
+.nt{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-size:2.2rem;font-weight:900;text-transform:uppercase;letter-spacing:-.02em;color:var(--wht);line-height:1.0;}
+.nb{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--acc);color:var(--wht);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:background .15s;}
 .nb:hover{background:var(--acc-d)}.nb svg{width:16px;height:16px;}
 footer{background:var(--blk);border-top:1px solid #222;color:rgba(255,255,255,.3);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;font-size:.72rem;letter-spacing:.06em;}
-.fn{font-family:'Roboto Condensed',sans-serif;font-weight:900;font-size:.82rem;color:var(--wht);text-transform:uppercase;}
+.fn{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-weight:900;font-size:.82rem;color:var(--wht);text-transform:uppercase;}
 .fl{display:flex;gap:20px;}.fl a{color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s;}.fl a:hover{color:var(--wht);}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.vis{opacity:1;transform:none;}
-.sb-wrap{margin:28px 0;border:2.5px solid var(--blk);border-radius:10px;overflow:hidden;}
+.sb-wrap{margin:28px 0;border:2.5px solid var(--blk);overflow:hidden;}
 .sb-label{background:var(--blk);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
 .sb-label-text{font-size:.65rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);}
 .sb-hint{font-size:.6rem;color:rgba(255,255,255,.3);font-style:italic;}
@@ -99,8 +99,8 @@ footer{background:var(--blk);border-top:1px solid #222;color:rgba(255,255,255,.3
 .lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:24px;}
 .lightbox.open{display:flex;}
 .lb-inner{position:relative;max-width:95vw;max-height:92vh;}
-.lb-inner img{max-width:100%;max-height:92vh;object-fit:contain;border-radius:6px;display:block;}
-.lb-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;background:var(--wht);border:2px solid var(--blk);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;font-weight:700;color:var(--blk);transition:background .15s;}
+.lb-inner img{max-width:100%;max-height:92vh;object-fit:contain;display:block;}
+.lb-close{position:absolute;top:-14px;right:-14px;width:36px;height:36px;background:var(--wht);border:2px solid var(--blk);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;font-weight:700;color:var(--blk);transition:background .15s;}
 .lb-close:hover{background:var(--blk);color:var(--wht);}
 .lb-hint{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);white-space:nowrap;}
 @media(max-width:700px){
@@ -116,7 +116,7 @@ audio::-webkit-media-controls-panel{background:#001824;}
 
 </style>
 </head>
-<body>
+<body style="background:#f4f2ee">
 
 <nav>
   <a href="index.html" class="nav-back">
@@ -162,7 +162,7 @@ audio::-webkit-media-controls-panel{background:#001824;}
   <div class="stats reveal">
     <div class="stat"><div class="stat-n">20M+</div><div class="stat-l">Alexa households reached</div></div>
     <div class="stat"><div class="stat-n">3</div><div class="stat-l">Surfaces designed simultaneously</div></div>
-    <div class="stat"><div class="stat-n">0</div><div class="stat-l">Existing precedents at Alexa</div></div>
+    <div class="stat"><div class="stat-n">6</div><div class="stat-l">Research principles that shaped the system</div></div>
   </div>
 
   <div class="div"></div>
@@ -201,6 +201,21 @@ audio::-webkit-media-controls-panel{background:#001824;}
       <p class="img-cap">Live session: Echo Show displaying step-by-step cocktail instructions. Real device, real recipe, real user.</p>
     </div>
     <div class="pq"><p>"When users had wet or occupied hands, they <em>never</em> reached for the screen — even when the voice instruction was unclear. The voice experience had to be fully self-sufficient."</p></div>
+  </section>
+
+  <div class="div"></div>
+
+  <section class="cs reveal">
+    <div class="slabel">Design Process</div>
+    <h2 class="stitle">Building the Multimodal Model</h2>
+    <p class="body">My approach was to design the <strong>voice and visual layers as a single system</strong> — not as separate experiences that happened to coexist. Every screen state had a corresponding voice state. Every Alexa utterance was paired with a visual anchor.</p>
+    <div class="process" style="display:flex;flex-direction:column;gap:2px;margin:28px 0;">
+      <div style="display:flex;gap:0;background:var(--sur);padding:20px 24px;border-left:3px solid var(--acc);"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--acc);opacity:.3;min-width:36px;line-height:1;">1</div><div><div style="font-size:.88rem;font-weight:500;margin-bottom:3px;color:var(--blk);">Map the physical context first</div><div style="font-size:.8rem;font-weight:300;color:#555;line-height:1.6;">Before any screen design, I mapped the full kitchen environment — what users do with their hands, where they look, when they speak. The interaction model had to fit real cooking, not a hypothetical.</div></div></div>
+      <div style="display:flex;gap:0;background:var(--sur);padding:20px 24px;border-left:3px solid var(--acc);"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--acc);opacity:.3;min-width:36px;line-height:1;">2</div><div><div style="font-size:.88rem;font-weight:500;margin-bottom:3px;color:var(--blk);">Design utterances before screens</div><div style="font-size:.8rem;font-weight:300;color:#555;line-height:1.6;">Utterance design preceded visual design. What Alexa says at each step defined what the screen needed to show — not the other way around. Voice was primary.</div></div></div>
+      <div style="display:flex;gap:0;background:var(--sur);padding:20px 24px;border-left:3px solid var(--acc);"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--acc);opacity:.3;min-width:36px;line-height:1;">3</div><div><div style="font-size:.88rem;font-weight:500;margin-bottom:3px;color:var(--blk);">Build cross-surface prototypes early</div><div style="font-size:.8rem;font-weight:300;color:#555;line-height:1.6;">Keynote prototypes simulating Echo Show and Echo Spot in parallel let us test multimodal coherence before any code existed. Each surface revealed different failure modes.</div></div></div>
+      <div style="display:flex;gap:0;background:var(--sur);padding:20px 24px;border-left:3px solid var(--acc);"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--acc);opacity:.3;min-width:36px;line-height:1;">4</div><div><div style="font-size:.88rem;font-weight:500;margin-bottom:3px;color:var(--blk);">Test in context, not in a lab</div><div style="font-size:.8rem;font-weight:300;color:#555;line-height:1.6;">Cocktail-making sessions in Amazon Santa Clara put real ingredients, real mess, and real time pressure in front of the prototype. Insights from these sessions directly shaped the six research principles.</div></div></div>
+      <div style="display:flex;gap:0;background:var(--sur);padding:20px 24px;border-left:3px solid var(--acc);"><div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--acc);opacity:.3;min-width:36px;line-height:1;">5</div><div><div style="font-size:.88rem;font-weight:500;margin-bottom:3px;color:var(--blk);">Establish the Alexa Design System connection</div><div style="font-size:.8rem;font-weight:300;color:#555;line-height:1.6;">Cook Along's visual patterns — step cards, ingredient highlights, navigation hints — were designed to the Alexa Elements system, ensuring the experience could scale to future content types without re-invention.</div></div></div>
+    </div>
   </section>
 
   <div class="div"></div>
@@ -323,13 +338,14 @@ audio::-webkit-media-controls-panel{background:#001824;}
     <h2 class="stitle">What I'd Do Differently</h2>
     <p class="body">I would push for <strong>longitudinal research earlier</strong>. Our in-kitchen sessions were invaluable but point-in-time. Tracking households over six weeks would have surfaced insights about habit formation after novelty wore off.</p>
     <p class="body">I'd also design <strong>failure states as first-class artifacts</strong> from day one — the moments Alexa misheard a quantity, or a user lost their place after a 20-minute pause, deserved dedicated attention earlier in the process.</p>
+    <p class="body">Looking forward, <strong>AI transforms what Cook Along could be</strong>. The current system is recipe-driven — you tell it what to make. A next-generation version would be pantry-aware and adaptive, surfacing recipes based on what you have and coaching in real time when something goes wrong. <em>The burnt onion smell, the sauce that broke — voice AI with vision could handle all of it.</em> What we built in 2018 was the foundation for a cooking partner that doesn't exist yet.</p>
   </section>
 
 </div>
 
 <div class="next">
-  <div><div class="nl">Next Project</div><div class="nt">HP Sprout<br>3D Capture</div></div>
-  <a href="#" class="nb">View Case Study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <div><div class="nl">Next Project</div><div class="nt">Alexa<br>Email</div></div>
+  <a href="alexa-email-case-study.html" class="nb">View Case Study<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
 
 <footer>
